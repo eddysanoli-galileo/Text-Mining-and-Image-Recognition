@@ -1,0 +1,38 @@
+Técnica para detección de figuras vectoriales (pueden ser descritas matemáticamente) en imágenes digitales
+Usada en computer vision
+Propuesta y patentada en 1962 por paul hough
+Inicialmente para detección de rectas
+Se extendió para identificar figuras paramétricas
+
+Líneas rectas
+- No se utiliza m y b como parámetros (coordenadas cartesianas), si no las coordenadas polares de la recta: p y theta
+- P representa la distancia desde el origen de las coordenadas a la línea (o a un punto (x,y))
+- Theta representa el ángulo del vector director de la recta perpendicular a la original
+- La ecuación de la recta puede representarse como: p = x*cos(theta) + y*sin(theta)
+- En el espacio (p,theta) la ecuación anterior para un punto (x0, y0) se representa como un sinusoide
+- Si las curvas correspondientes a dos puntos se intersectan, este punto de intersección en el espacio de Hough corresponde a una línea en el espacio de imagen. La línea pasa por los dos puntos que se intersectaban
+- El problema de detectar puntos colineales se convierte en un problema de buscar curvas concurrentes
+
+Algoritmo
+- Usa una matriz llamada acumulador
+- Su dimensión es igual al número de parámetros desconocidos del problema (para una recta sería 2)
+- Para construir el acumulador es necesario discretizar los parámetros que describen la figura
+- Cada celda del acumulador representa una figura cuyos parámetros pueden obtenerse a partir de su posición
+- Por cada punto en la imagen, se buscan las posibles figuras a las que puede pertenecer un punto
+	- Este se logra buscando todas las posibles combinaciones de valores para los parámetros de dicha figura 
+	- Si se encuentra una combinación válida, se calculan los parámetros y se incrementa el valor del acumulador en la posición correspondiente a los parámetros 
+	- Las figuras se detectan buscando las posiciones del acumulador con mayor valor 
+	- Para esto se utiliza un umbral u otras metodologías
+	- Existen imperfecciones a veces en el espacio acumulador, por lo que puede ser que no sea trivial la selección de picos
+	
+Generalización
+- Generalizada por Dana H. Ballard en 1981
+- Utiliza el principio de emparejamiento de plantillas
+- En esta versión, el problema de encontrar la posición del modelo se convierte en un problema de encontrar el parámetro de transformación que se ajusta mejor a los patrones de la imagen
+
+Limitaciones
+- Eficiente si un gran número de votos cae en la celda correcta
+- Para que una celda pueda ser detectada con facilidad sin importar el ruido de la imagen, debe tener un buen contraste
+- Su complejidad incrementa a un ritmo de O(A^p-2), donde A es el número de puntos de la imagen y p la cantidad de parámetros
+- Mejor si no se detectan otras cosas distintas de rectas o circunferencias
+
