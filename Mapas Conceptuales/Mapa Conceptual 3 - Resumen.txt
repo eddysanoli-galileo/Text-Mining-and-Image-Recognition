@@ -1,0 +1,88 @@
+Definición:
+- Rama de ciencia de la computación y de la IA
+- Permite que las computadoras entiendan texto y palabras escritas
+- Combina lingüistica con estadística, machine learning y modelos de DL
+- El lenguaje humano tiene ambiguedades que dificultan saber el significado de texto o datos de voz
+	- Irregularidades: Homónimos, homófonos, sarcasmo, expresiones, metáforas, gramática, excepciones
+
+Tasks:
+- Reconocimiento de voz: speech-to-text. 
+	- Convertir voz a datos en texto. 
+	- Desafíos: Gente que habla rápido, variaciones en tono, acentos distintos y gramática incorrecta
+	
+- Speech Tagging:
+	- Proceso de determinar la gramática de una palabra basado en su uso y contexto
+	- Ejemplo: Identificar "hacer" como verbo en "voy a hacer mi tarea"
+	
+- Word Sense Disambiguation
+	- Selección del significado de una palabra con múltiples significados
+	- Utiliza la semántica para determinar que significado hace más sentido
+
+- Named Entity Recognition
+	- Identifica palabras como elementos clave 
+	- "Guatemala" como país o "Pedro" como nombre
+	
+- Co-reference Resolution
+	- Identificar si dos palabras se refieren a la misma entidad
+	- Ej: Si una persona u objeto corresponden a un cierto pronombre (ella = María)
+	
+- Sentiment Analysis
+	- Permite extraer cualidades abstractas de texto como actitud, emociones, sarcasmo, confusión, sospecha
+	
+- Natural Language Generation
+	- Lo contrario a "speech-to-text"
+	- Convertir información estructurada en lenguaje humano
+	
+Herramientas:
+- Natural Language Toolkit (NLTK)
+	- Open source
+	- Librerías para las tasks listadas
+	- Herramientas para: 
+		"parseo de oraciones"
+		"segmentación de palabras"
+		"stemming y lemmatization" (dividir palabras en sus raíces)
+		"tokenization" (separar frases, oraciones y párrafos en tokens útiles para clasificación)
+	- Librerías para razonamiento semántico (generar conclusiones lógicas a partir de hechos obtenidos del texto)
+	
+- SpaCy
+	- Competidor para NLTK y es más rápido en muchos casos
+	- Representa todo como un objeto en lugar de un string
+	- SpaCy no incluye tantos lenguajes como NLTK.
+	- Buena documentación 
+	
+- TextBlob
+	- Extensión de NLTK
+	- Puede ser utilizado en aplicaciones que no requieren de súper rendimiento
+	- Para accesar funciones de NLTK de forma sencilla
+	
+- Textacy
+	- Utiliza SpaCy como base
+	- Permite realizar operaciones antes y después del procesamiento
+	- Evita el uso de código adicional de pre y post procesado
+	
+- PyTorch-NLP
+	- Publicado en 2018
+	- Para prototipado rápido y actualizado seguido según investigaciones nuevas 
+	
+- Statistical NLP
+	- Combina algoritmos con machine learning y DL para extraer, clasificar y etiquetar elementos de texto y voz según su probabilidad
+	- Redes neuronales convolucionales o recurrentes que extraen información de grandes datasets
+
+- GenSim:
+	- Librería de python para modelado de tareas usando algoritmos como "Latent Dirichlet Allocation (LDA)". 
+	- Útil para reconocer similitudes de texto, indexación y navegación de documentos
+	- Rápida, escalable y útil para manejar un alto volumen de datos 
+
+Usos:
+- Detección de spam: Se escanea el texto de e-mails para identificar spam
+- Machine Translation: Traducir de un lenguaje a otro tomando en cuenta el significado y el tono del lenguaje de entrada
+- Chatbot: Transcribe voz a texto y luego identifican requests a partir de dicho texto
+- Análisis de sentimiento en redes sociales: Identificar el sentimiento de posts, respuestas y reviews en redes sociales
+- Resumen de Texto: Toma grandes volúmenes de texto y los reduce en resúmenes cortos.
+
+Historia: 
+1. Lingüistica: Evaluar y crear reglas para un lenguaje utilizando sintaxis y semántica
+2. Lingüistica Computacional: Se agrega capacidad computacional que permite descubrir y probar nuevas teorías sobre el lenguaje
+3. Statistical NLP: Permite asociar probabilidades con las diferentes posibilidades de texto que pueden existir
+4. NLP: Utilizar machine learning para manipular lenguaje natural
+
