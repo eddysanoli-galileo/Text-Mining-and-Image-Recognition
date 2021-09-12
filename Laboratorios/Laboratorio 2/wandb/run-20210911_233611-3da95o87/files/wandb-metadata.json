@@ -1,0 +1,34 @@
+{
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.9.2",
+    "heartbeatAt": "2021-09-12T05:36:16.153846",
+    "startedAt": "2021-09-12T05:36:11.127136",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "--ip=127.0.0.1",
+        "--stdin=9003",
+        "--control=9001",
+        "--hb=9000",
+        "--Session.signature_scheme=\"hmac-sha256\"",
+        "--Session.key=b\"9f003ea8-49d6-4361-9354-802813a4f246\"",
+        "--shell=9002",
+        "--transport=\"tcp\"",
+        "--iopub=9004",
+        "--f=C:\\Users\\eddys\\AppData\\Local\\Temp\\tmp-10276LXc8xOl7hogr.json"
+    ],
+    "state": "running",
+    "program": "Laboratorio 2.ipynb",
+    "git": {
+        "remote": "ssh://github.com/eddysanoli-galileo/Text-Mining-and-Image-Recognition.git",
+        "commit": "8d6c1352e9519946317272be48f91946dec8c2f0"
+    },
+    "email": "eddysanoli@gmail.com",
+    "root": "E:/Archivos/Educaci\u00f3n/Posgrado/Universidad Galileo (UG)/Trimestre III/Text Mining & Image Recognition",
+    "host": "DESKTOP-DPFSP3I",
+    "username": "eddys",
+    "executable": "C:\\Users\\eddys\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+}
